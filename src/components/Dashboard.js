@@ -125,7 +125,7 @@ else{
         <CardComponent key={item.label} label={item.label} color={item.fillColor} data={cardData} dayWiseDatas={dayWiseData}></CardComponent>
         </div>)}
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
