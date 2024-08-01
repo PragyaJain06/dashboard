@@ -1,7 +1,9 @@
 import React from "react";
 import { Card,CardActions,CardContent,Typography } from "@mui/material";
 
+
 export default function CardComponent({label,color,data,dayWiseDatas}) {
+
 	return (
 		<div style={{}}>
 			<Card

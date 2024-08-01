@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import b from '../utils/sampleData.json';
 import CardComponent from './CardComponent';
+import ActivityBarChart from './BarChart';
+import ActivityLineChart from './LineChart';
+import ActivityPieChart from './PieChart';
 function Dashboard() {
-    const[selectValUser, setSelectValUser]= useState("")
+    const[selectValUser, setSelectValUser]= useState("All")
     const[ selectValDate, setSelectValDate]= useState("")
     const [cardData, setCardData]= useState([])
     const[dayWiseData, setDayWiseData]=useState([])
+
 let arr=[]
 let total=[]
 let res={}
@@ -79,7 +83,7 @@ if(selectValUser!=="" && selectValUser!=="All"){
                 resDay[key]=0;
             }
             resDay[key]+=value
-            console.log(resDay,"res")
+            
         })
        
         const resultArray = Object.entries(resDay).map(([name, value]) => ({
@@ -105,7 +109,6 @@ else{
             <div className='user-dropdown'>
             <p>Users</p>
         <select value={selectValUser} onChange={(e)=>setSelectValUser(e.target.value)}>
-        <option value="">Select User</option>
         <option value="All">All Users</option>
             {b.data.AuthorWorklog.rows.map((item)=> <option key={item.name}>{item.name}</option>
 
@@ -124,6 +127,9 @@ else{
         {b.data.AuthorWorklog.activityMeta.map((item)=><div className='cards' style={{display:"inline-block"}}>
         <CardComponent key={item.label} label={item.label} color={item.fillColor} data={cardData} dayWiseDatas={dayWiseData}></CardComponent>
         </div>)}
+        <ActivityBarChart data={cardData}></ActivityBarChart>
+        <ActivityLineChart data={dayWiseData} date={selectValDate}></ActivityLineChart>
+        <ActivityPieChart data={cardData}></ActivityPieChart>
     </div>
   );
 }
