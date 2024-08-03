@@ -162,7 +162,10 @@ function Dashboard() {
         }}
       >
         <ActivityBarChart data={cardData}></ActivityBarChart>
-        <ActivityPieChart data={cardData}></ActivityPieChart>
+        {(selectValDate==="" && selectValUser==="All")&&(
+            <ActivityPieChart data={cardData}></ActivityPieChart>
+        )}
+        
         <div className="radial">
           <ActivityRadialChart data={cardData}></ActivityRadialChart>
         </div>
