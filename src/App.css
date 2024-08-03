@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  
+  
 }
 
 .App-logo {
@@ -35,4 +37,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+.gradient-text {
+  background-color: #8884d8;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+ 
+}
+
+.gradient-text:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .gradient-text {
+      font-size: 2em; /* Responsive font size */
+  }
+}
+.dropdown{
+  display: flex;
+    justify-content: space-evenly;
+    padding: auto;
+    /* margin: auto; */
+    margin-bottom: 8rem;
+    margin-top: 4rem;
 }
