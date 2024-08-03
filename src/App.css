@@ -37,7 +37,7 @@
   }
 }
 .gradient-text {
-  background-color: #8884d8;
+  background: linear-gradient(45deg, #d6a459, #57b3ff);
   padding: 10px;
   color: #fff;
   border-radius: 5px;
